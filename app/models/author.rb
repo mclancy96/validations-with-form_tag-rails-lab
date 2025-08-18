@@ -1,2 +1,2 @@
-class Author < ActiveRecord::Base
+class Author < ApplicationRecord
 end
