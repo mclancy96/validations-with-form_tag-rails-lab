@@ -1,5 +1,5 @@
 RSpec.describe 'authors/edit', type: :feature do
- 
+
   let(:person) do
     Author.create!(
       email: 'Valid email',
@@ -32,10 +32,17 @@ RSpec.describe 'authors/edit', type: :feature do
         phone_number: '5550350001'
       )
 
-      visit new_author_path
+      author = Author.create(
+        email: "ygiuyg#{invalid_attributes[:email]}",
+        name: 'Va6lid',
+        phone_number: '5550358001'
+      )
+
+      visit edit_author_path(author)
       fill_in 'Email', with: invalid_attributes[:email]
       fill_in 'Phone Number', with: invalid_attributes[:phone_number]
-      click_button 'Create'
+      fill_in 'Name', with: ''
+      click_button 'Update'
     end
 
     it 'renders an error list' do
