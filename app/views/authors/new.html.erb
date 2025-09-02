@@ -1,19 +1,16 @@
 <h2>Create an Author</h2>
-<%= form_tag authors_path, method: "post" do %>
+<%= form_with(model: @author, url: authors_path, method: :post, local: true) do |form| %>
   <div class="field">
-    <%= label_tag "name", "Name" %>
-    <%= text_field_tag "name" %>
+    <%= form.label :name, "Name" %>
+    <%= form.text_field :name %>
   </div>
-
   <div class="field">
-    <%= label_tag "email", "Email" %>
-    <%= text_field_tag "email" %>
+    <%= form.label :email, "Email" %>
+    <%= form.text_field :email %>
   </div>
-
   <div class="field">
-    <%= label_tag "phone_number", "Phone Number" %>
-    <%= text_field_tag "phone_number" %>
+    <%= form.label :phone_number, "Phone Number" %>
+    <%= form.text_field :phone_number %>
   </div>
-
-  <%= submit_tag "Create" %>
+  <%= form.submit "Create" %>
 <% end %>

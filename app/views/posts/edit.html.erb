@@ -1,25 +1,22 @@
 <h2>Editing "<%= @post.title %>"</h2>
-<%= form_tag post_path(@post), method: "patch" do %>
+<%= form_with(model: @post, url: post_path(@post), method: :patch, local: true) do |form| %>
   <div class="field">
-    <%= label_tag "title", "Title" %>
-    <%= text_field_tag "title", @post.title %>
+    <%= form.label :title, "Title" %>
+    <%= form.text_field :title %>
   </div>
-
   <div class="field">
-    <%= label_tag "category", "Category" %>
+    <%= form.label :category, "Category" %>
     <p>Must be either "Fiction" or "Non-Fiction".</p>
-    <%= text_field_tag "category", @post.category %>
+    <%= form.text_field :category %>
     <p>
       Please type carefully as our top scientists are working around the clock to
       enable state-of-the-art dropdown technology for this form field.
     </p>
   </div>
-
   <div class="field">
-    <%= label_tag "content", "Content" %>
+    <%= form.label :content, "Content" %>
     <br />
     <%= text_area_tag "content", @post.content %>
   </div>
   <%= submit_tag "Update" %>
 <% end %>
-

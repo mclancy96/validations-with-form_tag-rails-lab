@@ -1,4 +1,4 @@
-# Validations with `form_tag`
+# Validations with `form_with`
 
 ## Objectives
 
@@ -13,27 +13,30 @@
 ### Validations
 
 1. Add validations to `Author` such that...
-  1. `name` is not blank
-  1. `email` is unique
-  1. `phone_number` is exactly 10 digits long
-1. Add validations to `Post` such that...
-  1. `title` is not blank
-  1. `content` is at least 100 characters long
-  1. `category` is either `"Fiction"` or `"Non-Fiction"`
+
+   - `name` is not blank
+   - `email` is unique
+   - `phone_number` is exactly 10 digits long
+
+2. Add validations to `Post` such that...
+
+   - `title` is not blank
+   - `content` is at least 100 characters long
+   - `category` is either `"Fiction"` or `"Non-Fiction"`
 
 ### Basic Routes & Controllers
 
 1. Create controllers for both models.
-1. Create `show`, `new`, `edit`, `create`, and `update` routes for both models.
-1. Define controller actions for `show`, `new`, and `edit`.
-1. Define the "valid path" for the `create` and `update` controller actions.
-1. Define the "invalid path" for the `create` and `update` controller actions.
+2. Create `show`, `new`, `edit`, `create`, and `update` routes for both models.
+3. Define controller actions for `show`, `new`, and `edit`.
+4. Define the "valid path" for the `create` and `update` controller actions.
+5. Define the "invalid path" for the `create` and `update` controller actions.
 
 ### Forms
 
-1. Create forms with `form_tag` for both models' `new` and `edit` actions.
-1. Prefill already-submitted forms with the invalid data when re-rendering.
-1. Display a list of errors at the top of forms when an invalid action is
-   attempted. They should be contained in an element with id
-   `error_explanation`, and each error should have its own `<li>`.
-1. Conditionally wrap each field in a `.field_with_errors` div if it has errors.
+1. Create forms with `form_with` for both models' `new` and `edit` actions.
+2. Prefill already-submitted forms with the invalid data when re-rendering.
+3. Display a list of errors at the top of forms when an invalid action is
+  attempted. They should be contained in an element with id
+  `error_explanation`, and each error should have its own `<li>`.
+4. Conditionally wrap each field in a `.field_with_errors` div if it has errors.
